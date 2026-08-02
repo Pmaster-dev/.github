@@ -152,6 +152,17 @@ async function checkWorkflow(
     );
     console.groupEnd();
 
+    console.log("Check if GHES branch exists");
+    const ghesBranchCheck = await exec(
+      "git",
+      ["show-ref", "--verify", "--quiet", "refs/remotes/origin/ghes"],
+      true
+    );
+    if (ghesBranchCheck.exitCode !== 0) {
+      console.log("No remote GHES branch found. Skipping GHES sync.");
+      return;
+    }
+
     console.log("Switch to GHES branch");
     await exec("git", ["checkout", "ghes"]);
 
