@@ -1,0 +1,48 @@
+# MBTQ / 360Magicians Full Ecosystem Dependency Map
+# Created: 2026-08-09
+# Status: COMPLETED
+
+dependencies:
+  - component: MBTQ Platform (mbtq-platform)
+    direct_dependencies:
+      - pinksync-middleware (accessibility router)
+      - Google AI Studio Proxy / Gemini API
+    indirect_dependencies:
+      - deafauth-api (profile metadata extraction)
+      - 360magicians-vertex-ai (Gemini models translation)
+
+  - component: PinkSync Middleware (pinksync-middleware)
+    direct_dependencies:
+      - deafauth-api (via tokens validation and profiles API)
+      - 360magicians-vertex-ai (Vertex AI accessibility transformation endpoint)
+    indirect_dependencies:
+      - Firestore (deafauth profile records)
+      - Redis (token cache)
+
+  - component: 360Magicians Vertex AI Hub (vertex-ai-hub)
+    direct_dependencies:
+      - GCP Vertex AI (Gemini-1.5-pro)
+      - deafauth-api (profile context injection)
+
+  - component: MBTQ Universe DAO (mbtquniverse-dao)
+    direct_dependencies:
+      - Ethereum JSON-RPC provider (RPC_URL)
+      - StakingContract Address
+      - GovernanceContract Address
+      - WebSockets (real-time voting channel)
+    indirect_dependencies:
+      - deafauth-api (voter verification levels)
+
+  - component: Fibonrose Task Validator (fibonrose-validator)
+    direct_dependencies:
+      - Octokit API / GitHub Actions environment
+    indirect_dependencies:
+      - StakingContract Address ( Polygon / Web3 Proof submitter )
+
+  - component: PinkFlow MicroVM Sandbox (pinkflow-sandbox)
+    direct_dependencies:
+      - Firecracker MicroVMs
+      - FastAPI (Sandbox python runner)
+      - Fibonrose Staking Proof Contract (anchoring quality verification score)
+    indirect_dependencies:
+      - deafauth-api (authenticating partner keys)

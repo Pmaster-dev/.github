@@ -1,0 +1,49 @@
+# MBTQ / 360Magicians Full Ecosystem Historical Timeline
+# Created: 2026-08-09
+# Status: COMPLETED
+
+timeline:
+  - transition: "Initial Decentralized Specification & Monorepo Effort"
+    date: "2023 - 2024"
+    commit: "Historical Init / Develop"
+    repository: "deaf-first-platform"
+    before: "Fragmented individual project ideas."
+    after: "Structured monorepo outlining five core services (DeafAUTH, PinkSync, Fibonrose, 360Magicians, and DAO) with full OpenAPI specifications and interactive index.html."
+    reason: "Standardizing the API schemas across all proposed services."
+    evidence: "The Services/ directory, custom build workflow blueprints, and comprehensive OpenAPI v3.1 definitions in the deaf-first-platform repository."
+
+  - transition: "Transition to Next.js Component Reference Repositories"
+    date: "Mid-2024"
+    commit: "Provider/App Scaffold Init"
+    repository: "deafauth, pinksync-app, fibonrose"
+    before: "Monorepo-bounded, spec-only files in deaf-first-platform."
+    after: "Isolated, dedicated Next.js reference projects demonstrating component setups, Supabase connectors, and Chrome extension boundaries."
+    reason: "Encouraging modular integration and enabling quick prototyping of individual layers."
+    evidence: "Complete, autonomous package configurations and frontend codes in independent repos: deafauth, pinksync-app, and fibonrose."
+
+  - transition: "Full-Stack Dev-Suite Implementation & Sign Visual System Design"
+    date: "Late 2024 - 2025"
+    commit: "mbtq-dev initial setup"
+    repository: "mbtq-dev"
+    before: "Specs and stateless components."
+    after: "A unified Full-Stack suite featuring a functional Express server (with webhooks SSRF protections), client apps, interactive Sign Visual Systems, and local Fibonrose validators."
+    reason: "Implementing a cohesive tool and demo environment showcasing real-time agent states (visual state communication)."
+    evidence: "Core server code, Vite-React clients, and testing suites inside mbtq-dev repository."
+
+  - transition: "Sandbox Orchestration and microVM Integration"
+    date: "2025"
+    commit: "Container blueprint release"
+    repository: "pinkflow"
+    before: "Manual/unverified integration code checking."
+    after: "Safe, ephemeral MicroVM (Firecracker) orchestration specifications utilizing FastAPI runners and automated Fibonrose blockchain credentialing."
+    reason: "Guaranteeing secure, isolated testing for partner-submitted integration code without compromising ecosystem networks."
+    evidence: "pinkflow/container blueprint layout and mock endpoint codeblocks."
+
+  - transition: "GCP Infrastructure Setup & Unified Service Deployment"
+    date: "Early 2026"
+    commit: "Kubernetes deployment configs"
+    repository: "municipal-dao-v"
+    before: "Local development setups and detached reference repos."
+    after: "Highly structured GCP Terraform configurations (Firestore, Redis, global SSL certificates) and complete Docker-based service implementations for unified running deployments."
+    reason: "Creating a production-ready, highly-available deployment of the entire MBTQ ecosystem under GKE and GCP."
+    evidence: "Active directory contents under gcp-infrastructure/ and services/ containing the exact code definitions of the entire ecosystem."

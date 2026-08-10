@@ -1,0 +1,70 @@
+# MBTQ / 360Magicians Full Ecosystem Domain Map
+# Created: 2026-08-09
+# Status: COMPLETED
+
+domains:
+  - domain_name: mbtq.dev
+    canonical_owner: MBTQ Platform / mbtq-platform
+    associated_services:
+      - v0-studio-integration
+      - gemini-cli-bridge
+      - deaf-first-ui-dashboard
+      - ai-google-studio-proxy
+    associated_repositories:
+      - mbtq-dev (active client/server)
+      - municipal-dao-v (mbtq-platform service)
+      - deaf-first-platform (legacy specifications)
+    purpose: Central developer and user gateway containing high-fidelity, Deaf-first React applications, the V0-Gemini Bridge, and the interactive Sign Visual System.
+
+  - domain_name: 360magicians.com
+    canonical_owner: 360Magicians Vertex AI Hub
+    associated_services:
+      - creative-ai.360magicians.com (creative design)
+      - design-ai.360magicians.com (deaf UX pattern)
+      - content-ai.360magicians.com (translation & captioning)
+      - accessibility-ai.360magicians.com (adaptive layout logic)
+    associated_repositories:
+      - municipal-dao-v (vertex-ai-hub service)
+      - deaf-first-platform (magicians schema specs)
+    purpose: Specialized artificial intelligence subnet routing specific requests through specialized models trained for visual, sign-language, and tactile adaptations.
+
+  - domain_name: pinksync.io
+    canonical_owner: PinkSync Accessibility Engine
+    associated_services:
+      - ai-transformation (accessibility routing)
+      - accessibility-layer (visual-tactile conversion)
+      - data-synchronization (offline cue logs)
+      - offline-sync (service worker queues)
+      - cross-platform-delivery (web/RN widgets)
+    associated_repositories:
+      - pinksync-app (browser extension and reference pages)
+      - municipal-dao-v (pinksync-middleware service)
+      - deaf-first-platform (pinksync OpenAPI spec)
+    purpose: Critical middleware handling visual-alert and haptic telemetry, real-time message compression, multi-provider translations, and auto-sync queue processing.
+
+  - domain_name: mbtquniverse.com
+    canonical_owner: MBTQ Universe DAO
+    associated_services:
+      - dao-governance (voting, proposals)
+      - web3-staking (contract staking APY)
+      - showcase-projects (audited software catalog)
+      - community-treasury (accessibility grants)
+    associated_repositories:
+      - municipal-dao-v (mbtquniverse-dao service)
+      - fibonrose (staking reference templates)
+      - deaf-first-platform (dao schema specs)
+    purpose: Governs funding, community project auditing, staking incentives, and token rewards in an ASL-centric, highly structured decentralization model.
+
+  - domain_name: deafauth.mbtq.dev
+    canonical_owner: DeafAUTH Identity Cortex
+    associated_services:
+      - cross-ecosystem-auth (identity provider)
+      - accessibility-preferences (prompting and schema records)
+      - ai-personalization (visual avatars preferences)
+      - community-verification (peer credential checks)
+    associated_repositories:
+      - deafauth (Next.js Provider specification)
+      - Aegis (AI security addon)
+      - municipal-dao-v (deafauth-api service)
+      - deaf-first-platform (deafauth OpenAPI spec)
+    purpose: Foundational identity boundary recording user identities, sign language dialects, visual and font weight configurations, and contributions reputation.

@@ -1,0 +1,124 @@
+# MBTQ / 360Magicians Full Ecosystem Architecture Graph
+# Created: 2026-08-09
+# Status: AUDITED (L0-L10 Layers mapped)
+
+layers:
+  L0:
+    name: PRINCIPLES
+    definition: Deaf-First by Default, Sign Leads/Text Follows, High-Contrast Visuals, Haptic Feedback Opportunities, Ephemeral isolated execution, Cryptographic/On-Chain Trust anchoring.
+    components: []
+
+  L1:
+    name: ECOSYSTEM
+    definition: MBTQ Universe - The cohesive union of visual accessible frontends, real-time sync networks, trust systems, decentralized organizations, and AI magician agents.
+    components:
+      - MBTQ Universe DAO
+      - MBTQ Platform
+      - VR4Deaf
+
+  L2:
+    name: PLATFORM
+    definition: Core identity, accessibility, and automation frameworks supporting general development and integration.
+    components:
+      - DeafAUTH Identity Cortex
+      - PinkSync Accessibility Engine
+      - Fibonrose Task Validator
+
+  L3:
+    name: DOMAIN
+    definition: Specific functional zones and organizational scopes.
+    components:
+      - mbtq.dev (Deaf-First UI Platform)
+      - 360magicians.com (AI Specialist Hub)
+      - pinksync.io (Accessibility Middleware Network)
+      - mbtquniverse.com (DAO & Web3 Staking)
+      - deafauth.mbtq.dev (Universal Identity Network)
+
+  L4:
+    name: SERVICE
+    definition: Microservices and operational workloads running as logical backends.
+    components:
+      - deafauth-api
+      - pinksync-middleware
+      - vertex-ai-hub
+      - pinkflow-sandbox
+
+  L5:
+    name: CONTRACT
+    definition: Solidity/Web3 Smart Contracts and interface specifications (ABIs).
+    components:
+      - StakingContract (stake, calculateRewards)
+      - DAOGovernanceContract (createProposal, vote)
+      - FibonroseProofContract (submitProof, verifyProof)
+
+  L6:
+    name: API
+    definition: Endpoint schemas, payloads, and communication paths.
+    components:
+      - OpenAPI specs (v3.1 in deaf-first-platform)
+      - WebSocket events (Rooms for proposal channels in municipal-dao-v)
+      - REST JSON Endpoints (Express routes in deafauth-api)
+
+  L7:
+    name: DATA
+    definition: Storage, schemas, caching, and databases.
+    components:
+      - Firestore Database (deafauth-profiles database)
+      - Redis Cache (deafauth-cache)
+      - Cloud Storage Bucket (deafauth-assets-mbtq-dev)
+      - LocalStorage / Service Worker Cache (offlineCache)
+
+  L8:
+    name: RUNTIME
+    definition: Container orchestration and sandboxing process execution.
+    components:
+      - Node.js 18/20 (Express/Next.js)
+      - Firecracker MicroVMs (PinkFlow runner)
+      - Deno sandbox runner (Typescript execution)
+
+  L9:
+    name: DEPLOYMENT
+    definition: Infrastructure-as-code and platform targets.
+    components:
+      - GKE Kubernetes clusters (deafauth-cluster)
+      - Google Cloud Run (microservices)
+      - Google Cloud DNS / Managed SSL Certificates
+
+  L10:
+    name: OPERATIONS
+    definition: Deployment pipelines, linter workflows, and sovereign build systems.
+    components:
+      - GitHub Actions (mbtq-sovereign, fibonrose-validator, validate-data)
+      - Vercel Prebuilt Deployment (--prebuilt command line tree uploads)
+      - strip-magic.sh (Anti-vendor-lock scrub script)
+
+cross_cutting_maps:
+  identity:
+    platform_level: DeafAUTH Identity Cortex
+    domain: deafauth.mbtq.dev
+    purpose: Propagating identity metadata (preferences, roles, languages) as JWT/Paseto contexts across the ecosystem.
+
+  trust:
+    platform_level: Fibonrose Validator
+    domain: trust.mbtq.dev / mbtq-dev
+    purpose: Enforces Fibonacci-proportional task checklist checkpoints verified with immutable evidence (SHAs, paths, etc.).
+
+  accessibility:
+    platform_level: PinkSync Engine / accessibility-validator
+    domain: pinksync.io
+    purpose: Translates standard layouts and payloads into visually structures, sign-language metaphors, tactile cues, and high-contrast schemas.
+
+  AI:
+    platform_level: 360Magicians AI Hub / V0-Gemini Bridge
+    domain: 360magicians.com / mbtq.dev
+    purpose: Employs Gemini-1.5-pro models to route and answer specialized requests across Creative, Design, Content, and Accessibility sub-domains.
+
+  orchestration:
+    platform_level: PinkFlow Sandbox / repo-runtime.yml
+    domain: pinksync.io
+    purpose: Leverages Firecracker and FastAPI to run isolated code checks, anchoring results to Fibonrose on-chain profiles.
+
+  governance:
+    platform_level: MBTQ Universe DAO / real-time voting
+    domain: mbtquniverse.com
+    purpose: Coordinates proposals, real-time WebSocket voting panels, quorum trackers, and staking rewards using ethers.js.
