@@ -46,7 +46,7 @@ registry:
       deployment_target: GKE Cluster (deafauth-cluster), Google Cloud Run
       current_evidence: Express.js server active in `municipal-dao-v` services directory.
       historical_evidence: Supabase-based reference Next.js implementation in `deafauth` repository.
-      confidence: 1.0 (Highly Confirmed, actively referenced and fully written).
+      confidence: 1.0
 
   - component:
       canonical_name: NegraRosa Security Framework
@@ -75,7 +75,7 @@ registry:
       deployment_target: Vercel / Docker
       current_evidence: Complete security repository in `Pmaster-dev/NegraRosa`.
       historical_evidence: None.
-      confidence: 0.95 (High, fully specified and structured).
+      confidence: 0.95
 
   - component:
       canonical_name: FibonRoseTrust AI Verification Engine
@@ -105,7 +105,7 @@ registry:
       deployment_target: Docker / Vercel / Cloud Run
       current_evidence: Comprehensive repository layout in `Pmaster-dev/FibonRoseTrust`.
       historical_evidence: Reference Next.js templates in `fibonrose`.
-      confidence: 0.95 (High, actively referenced across ecosystem docs).
+      confidence: 0.95
 
   - component:
       canonical_name: PinkSync Accessibility Engine
@@ -146,7 +146,7 @@ registry:
       deployment_target: Google Cloud Run, GKE Cluster
       current_evidence: TypeScript class `AccessibilityTransformer` active in `municipal-dao-v`.
       historical_evidence: Express backend and widget reference patterns in `pinksync-app`.
-      confidence: 1.0 (Highly Confirmed, central router for accessibility telemetry).
+      confidence: 1.0
 
   - component:
       canonical_name: 360Magicians Vertex AI Hub
@@ -170,7 +170,7 @@ registry:
         - pinksync-middleware
         - mbtq-platform
       providers:
-        - Domain subspecialties: creative, design, content, accessibility
+        - "Domain subspecialties: creative, design, content, accessibility"
       APIs:
         - POST /api/magicians/generate
         - POST /api/magicians/translate
@@ -180,7 +180,7 @@ registry:
       deployment_target: Google Cloud Run, GCP GKE (vertex-ai-hub deployment)
       current_evidence: Implemented in `services/360magicians-vertex-ai` in `municipal-dao-v`.
       historical_evidence: OpenAPI magician models defined in `deaf-first-platform`.
-      confidence: 1.0 (Highly Confirmed, fully specified and coded).
+      confidence: 1.0
 
   - component:
       canonical_name: MBTQ Platform
@@ -213,7 +213,7 @@ registry:
       deployment_target: GKE Cluster (mbtq-platform), Vercel/GitHub Pages (Client)
       current_evidence: Hybrid React panel code in `mbtq-dev` and Gemini CLI bridge in `municipal-dao-v`.
       historical_evidence: Initial static HTML and documentation files in `deaf-first-platform` Monorepo.
-      confidence: 0.95 (High, working components mapped across two operational repos).
+      confidence: 0.95
 
   - component:
       canonical_name: MBTQ Universe DAO
@@ -248,7 +248,7 @@ registry:
       deployment_target: GKE Cluster, Decentralized Blockchain (Polygon/Ethereum)
       current_evidence: Complete staking showcase code with ethers.js in `municipal-dao-v`.
       historical_evidence: Reference Next.js templates in `fibonrose`.
-      confidence: 0.90 (High, well-coded contract wrappers and mock fallbacks).
+      confidence: 0.90
 
   - component:
       canonical_name: Fibonrose Task Validator
@@ -282,7 +282,7 @@ registry:
       deployment_target: GitHub Actions runner, Node.js environment
       current_evidence: Fully functional validator classes and test files inside `mbtq-dev`.
       historical_evidence: Boilerplate TS action in `trust-engine` and credential dashboards in `fibonrose`.
-      confidence: 0.95 (High, validated task checkpoint schemas).
+      confidence: 0.95
 
   - component:
       canonical_name: PinkFlow MicroVM Sandbox
@@ -309,4 +309,4 @@ registry:
       deployment_target: Google Cloud Run (sandbox container)
       current_evidence: Blueprint architecture, FastAPI endpoint definitions in `pinkflow` repository files.
       historical_evidence: None (New structural addition).
-      confidence: 0.85 (Medium-High, fully detailed blueprints and server code blocks, operational sandboxing logic).
+      confidence: 0.85

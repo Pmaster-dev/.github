@@ -1,0 +1,427 @@
+{
+  "registry": [
+    {
+      "component": {
+        "canonical_name": "DeafAUTH Identity Cortex",
+        "aliases": [
+          "deafauth-api",
+          "DeafAUTH",
+          "Identity Cortex"
+        ],
+        "definitions": [
+          {
+            "repository": "municipal-dao-v",
+            "path": "services/deafauth-api/src/server.ts",
+            "purpose": "Core authentication, profile management, and community verification engine for Deaf-first profiles.",
+            "evidence": "Active Express.js application querying Firestore and caching tokens in Redis."
+          },
+          {
+            "repository": "deafauth",
+            "path": "app/",
+            "purpose": "Reference Next.js web application for prompt-based identity onboarding.",
+            "evidence": "Next.js pages, custom hooks, and Supabase integration logic."
+          },
+          {
+            "repository": "deaf-first-platform",
+            "path": "Services/deafauth",
+            "purpose": "OpenAPI spec definition and routes reference.",
+            "evidence": "Detailed OpenAPI 3.1 schema."
+          }
+        ],
+        "dependencies": [
+          "Firestore (\"deafauth-profiles\" database)",
+          "Redis (\"deafauth-redis\")",
+          "GCP Pub/Sub (\"deafauth-events\", \"deafauth-verifications\" topics)"
+        ],
+        "consumers": [
+          "pinksync-middleware",
+          "mbtq-platform",
+          "mbtquniverse-dao",
+          "360magicians-vertex-ai"
+        ],
+        "providers": [
+          "lib/deafauth-sdk.ts (Client SDK)"
+        ],
+        "APIs": [
+          "POST /auth/register",
+          "POST /auth/login",
+          "GET /api/profile/:profileId",
+          "POST /api/verification",
+          "GET /api/domains/:domain/stats"
+        ],
+        "data_stores": [
+          "Firestore",
+          "Redis"
+        ],
+        "authentication": "None (Acts as the identity provider, issues signed JWT/Paseto tokens)",
+        "deployment_target": "GKE Cluster (deafauth-cluster), Google Cloud Run",
+        "current_evidence": "Express.js server active in `municipal-dao-v` services directory.",
+        "historical_evidence": "Supabase-based reference Next.js implementation in `deafauth` repository.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "NegraRosa Security Framework",
+        "aliases": [
+          "NegraRosa",
+          "negrarosa-security"
+        ],
+        "definitions": [
+          {
+            "repository": "NegraRosa",
+            "path": "README.md",
+            "purpose": "Inclusive Security Framework providing NFT-based identity ('I AM WHO I AM' token), zero-custody credential sharing, and append-only audit logging.",
+            "evidence": "Active Drizzle ORM layout, Express/Next API endpoints, and security pipeline workflows."
+          }
+        ],
+        "dependencies": [
+          "DeafAUTH Identity Cortex",
+          "EVM Blockchain (NFT minting)"
+        ],
+        "consumers": [
+          "FibonRoseTrust",
+          "mbtq-platform"
+        ],
+        "providers": [
+          "NFT Identity Attestation & Zero-Custody Verification"
+        ],
+        "APIs": [
+          "POST /api/v1/auth/nft-verify",
+          "POST /api/v1/audit/log"
+        ],
+        "data_stores": [
+          "Drizzle ORM / PostgreSQL"
+        ],
+        "authentication": "Decentralized NFT Signature / DeafAUTH",
+        "deployment_target": "Vercel / Docker",
+        "current_evidence": "Complete security repository in `Pmaster-dev/NegraRosa`.",
+        "historical_evidence": "None.",
+        "confidence": 0.95
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "FibonRoseTrust AI Verification Engine",
+        "aliases": [
+          "FibonRoseTrust",
+          "fibonrose-trust"
+        ],
+        "definitions": [
+          {
+            "repository": "FibonRoseTrust",
+            "path": "README.md",
+            "purpose": "AI-driven professional verification system authenticating deaf community service providers, interpreters, and capabilities.",
+            "evidence": "Integrates DeafAuth, PinkSync, FibonRose, and NegraRosa into a unified AI taxonomy matcher."
+          }
+        ],
+        "dependencies": [
+          "DeafAUTH Identity Cortex",
+          "PinkSync Accessibility Engine",
+          "NegraRosa Security Framework"
+        ],
+        "consumers": [
+          "Job Magician (Job-service)",
+          "Business Magician (business-service)"
+        ],
+        "providers": [
+          "AI Professional Matching & Verified Provider Registry"
+        ],
+        "APIs": [
+          "POST /api/v1/verify/professional",
+          "POST /api/v1/match/interpreter"
+        ],
+        "data_stores": [
+          "Drizzle ORM / PostgreSQL"
+        ],
+        "authentication": "DeafAUTH Bearer Tokens / NegraRosa NFTs",
+        "deployment_target": "Docker / Vercel / Cloud Run",
+        "current_evidence": "Comprehensive repository layout in `Pmaster-dev/FibonRoseTrust`.",
+        "historical_evidence": "Reference Next.js templates in `fibonrose`.",
+        "confidence": 0.95
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "PinkSync Accessibility Engine",
+        "aliases": [
+          "pinksync-middleware",
+          "PinkSync",
+          "Accessibility Transformer"
+        ],
+        "definitions": [
+          {
+            "repository": "municipal-dao-v",
+            "path": "services/pinksync-middleware/src/accessibility-transformer.ts",
+            "purpose": "Real-time accessibility transformations (visual, tactile, sign language) and offline/online data sync.",
+            "evidence": "TypeScript ESM implementation of sync queues, service workers, and Vertex AI integrations."
+          },
+          {
+            "repository": "pinksync-app",
+            "path": "app/",
+            "purpose": "Reference Next.js workspace for PinkSync accessibility widgets and browser extensions.",
+            "evidence": "Complete Next.js frontends and Chrome extension manifest."
+          },
+          {
+            "repository": "deaf-first-platform",
+            "path": "Services/pinksync",
+            "purpose": "OpenAPI service spec for sync nodes.",
+            "evidence": "OpenAPI YAML schemas."
+          }
+        ],
+        "dependencies": [
+          "360magicians-vertex-ai (Vertex AI hub)",
+          "deafauth-api (via token verification and profile fetching)"
+        ],
+        "consumers": [
+          "mbtq-platform",
+          "mbtquniverse-dao"
+        ],
+        "providers": [
+          "Service Worker (pinksync-sw.js)",
+          "Local Offline Cache (offlineCache)"
+        ],
+        "APIs": [
+          "POST /api/v1/users/:userId/sync",
+          "PUT /api/v1/users/:userId/preferences",
+          "GET /api/v1/users/:userId/accommodations"
+        ],
+        "data_stores": [
+          "LocalStorage / IndexedDB (Client side)",
+          "Redis session cache (Server side)"
+        ],
+        "authentication": "Bearer token (DeafAUTH signed JWT/Paseto)",
+        "deployment_target": "Google Cloud Run, GKE Cluster",
+        "current_evidence": "TypeScript class `AccessibilityTransformer` active in `municipal-dao-v`.",
+        "historical_evidence": "Express backend and widget reference patterns in `pinksync-app`.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "360Magicians Vertex AI Hub",
+        "aliases": [
+          "vertex-ai-hub",
+          "360magicians-vertex-ai",
+          "MagicianCore"
+        ],
+        "definitions": [
+          {
+            "repository": "municipal-dao-v",
+            "path": "services/360magicians-vertex-ai/src/multi-domain-ai.ts",
+            "purpose": "Vertex AI Multi-Domain hub specialized for Deaf-first accessibility transformations.",
+            "evidence": "TypeScript wrapper around `@google-cloud/vertexai` leveraging Gemini-1.5-pro models."
+          },
+          {
+            "repository": "deaf-first-platform",
+            "path": "Services/magicians",
+            "purpose": "OpenAPI spec definition for agent interaction and AI routing.",
+            "evidence": "OpenAPI specification for AI text-to-sign, captioning, and design translations."
+          }
+        ],
+        "dependencies": [
+          "GCP Vertex AI (Gemini-1.5-pro)",
+          "deafauth-api (profile metadata extraction)"
+        ],
+        "consumers": [
+          "pinksync-middleware",
+          "mbtq-platform"
+        ],
+        "providers": [
+          "Domain subspecialties: creative, design, content, accessibility"
+        ],
+        "APIs": [
+          "POST /api/magicians/generate",
+          "POST /api/magicians/translate"
+        ],
+        "data_stores": [
+          "Vertex AI vector indexes (Inferred)"
+        ],
+        "authentication": "Bearer token (DeafAUTH validation)",
+        "deployment_target": "Google Cloud Run, GCP GKE (vertex-ai-hub deployment)",
+        "current_evidence": "Implemented in `services/360magicians-vertex-ai` in `municipal-dao-v`.",
+        "historical_evidence": "OpenAPI magician models defined in `deaf-first-platform`.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "MBTQ Platform",
+        "aliases": [
+          "mbtq-platform",
+          "mbtq-dev-core",
+          "v0-gemini-bridge"
+        ],
+        "definitions": [
+          {
+            "repository": "municipal-dao-v",
+            "path": "services/mbtq-platform/src/v0-gemini-bridge.ts",
+            "purpose": "Deaf-first development interface bridging V0 studio layouts and Gemini models.",
+            "evidence": "TypeScript code querying Google's `@ai-sdk/google` for UI code synthesis."
+          },
+          {
+            "repository": "mbtq-dev",
+            "path": "client/src/components/SignVisualSystem/SignVisualSystem.tsx",
+            "purpose": "React-based frontend demo implementing the Sign Visual System.",
+            "evidence": "Interactive React components mapping 8 core agent states (IDLE, PROCESSING, etc.) with confidence indicators."
+          }
+        ],
+        "dependencies": [
+          "Google AI SDK / Google Studio Proxy",
+          "pinksync-middleware (for output transformations)"
+        ],
+        "consumers": [
+          "End-user deaf developers"
+        ],
+        "providers": [
+          "React visual panels (SignerPanel, ActionLog, ConfidenceCue)"
+        ],
+        "APIs": [
+          "POST /api/generate/ui",
+          "POST /api/studio/proxy"
+        ],
+        "data_stores": [
+          "In-memory event bus (StateEventBus)"
+        ],
+        "authentication": "Bearer token (DeafAUTH integration)",
+        "deployment_target": "GKE Cluster (mbtq-platform), Vercel/GitHub Pages (Client)",
+        "current_evidence": "Hybrid React panel code in `mbtq-dev` and Gemini CLI bridge in `municipal-dao-v`.",
+        "historical_evidence": "Initial static HTML and documentation files in `deaf-first-platform` Monorepo.",
+        "confidence": 0.95
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "MBTQ Universe DAO",
+        "aliases": [
+          "mbtquniverse-dao",
+          "Universe Services",
+          "Web3 Staking Showcase"
+        ],
+        "definitions": [
+          {
+            "repository": "municipal-dao-v",
+            "path": "services/mbtquniverse-dao/src/web3-staking-showcase.ts",
+            "purpose": "Handles Web3 staking, decentralized voting, and community project showcases in a Deaf-accessible wrapper.",
+            "evidence": "Active ethers.js integration referencing staking and governance contract ABIs."
+          },
+          {
+            "repository": "deaf-first-platform",
+            "path": "Services/dao",
+            "purpose": "OpenAPI spec definitions for voting and proposals.",
+            "evidence": "Swagger/OpenAPI files defining proposal endpoints."
+          }
+        ],
+        "dependencies": [
+          "Ethereum Provider / JSON-RPC Endpoint (RPC_URL)",
+          "Staking Contract Address",
+          "DAO Governance Contract Address"
+        ],
+        "consumers": [
+          "Community members"
+        ],
+        "providers": [
+          "Visual staking dashboards, tactile confirmations, sign language explanations"
+        ],
+        "APIs": [
+          "POST /api/dao/proposals",
+          "POST /api/dao/stake"
+        ],
+        "data_stores": [
+          "EVM Blockchain State",
+          "Next.js WebSockets"
+        ],
+        "authentication": "Ethers.js Wallets & DeafAUTH credentials",
+        "deployment_target": "GKE Cluster, Decentralized Blockchain (Polygon/Ethereum)",
+        "current_evidence": "Complete staking showcase code with ethers.js in `municipal-dao-v`.",
+        "historical_evidence": "Reference Next.js templates in `fibonrose`.",
+        "confidence": 0.9
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "Fibonrose Task Validator",
+        "aliases": [
+          "fibonrose-validator",
+          "trust-engine",
+          "FibonRose"
+        ],
+        "definitions": [
+          {
+            "repository": "mbtq-dev",
+            "path": "fibonrose/fibonrose-validator.ts",
+            "purpose": "Fibonacci-based task verification and validation logic that anchors check-in results on-chain.",
+            "evidence": "Complete TypeScript validator class generating checklists (complexity 0-9) and parsing comment strings."
+          },
+          {
+            "repository": "trust-engine",
+            "path": "README.md",
+            "purpose": "GitHub Action template wrapping trust-engine runs.",
+            "evidence": "Standard action.yml and test fixtures."
+          }
+        ],
+        "dependencies": [
+          "Octokit API (GitHub context)",
+          "Staking contract (on Polygon)"
+        ],
+        "consumers": [
+          "Developers, GitHub Action Workflows (fibonrose-validator.yml)"
+        ],
+        "providers": [
+          "Task completion reports and trust NFTs"
+        ],
+        "APIs": [
+          "FibonroseValidator.createTask",
+          "FibonroseValidator.confirmMilestone"
+        ],
+        "data_stores": [
+          "GitHub Issue state",
+          "Blockchain evidence anchors"
+        ],
+        "authentication": "GitHub Tokens, Web3 Signer",
+        "deployment_target": "GitHub Actions runner, Node.js environment",
+        "current_evidence": "Fully functional validator classes and test files inside `mbtq-dev`.",
+        "historical_evidence": "Boilerplate TS action in `trust-engine` and credential dashboards in `fibonrose`.",
+        "confidence": 0.95
+      }
+    },
+    {
+      "component": {
+        "canonical_name": "PinkFlow MicroVM Sandbox",
+        "aliases": [
+          "pinkflow-sandbox",
+          "PinkFlow Sandbox"
+        ],
+        "definitions": [
+          {
+            "repository": "pinkflow",
+            "path": "container",
+            "purpose": "Highly isolated MicroVM (Firecracker) execution environment for validating partner integration code.",
+            "evidence": "Comprehensive design blueprint explaining sandbox runner (FastAPI), Python code executor, and GCloud Terraform setup."
+          }
+        ],
+        "dependencies": [
+          "Firecracker microVMs",
+          "Google Cloud Run / Container Registry"
+        ],
+        "consumers": [
+          "CodeValidationAgent (360Magicians)"
+        ],
+        "providers": [
+          "Code validation and isolated run metrics"
+        ],
+        "APIs": [
+          "POST /verify"
+        ],
+        "data_stores": [
+          "Ephemeral virtual disks"
+        ],
+        "authentication": "DeafAUTH public keys (verified inside MicroVM)",
+        "deployment_target": "Google Cloud Run (sandbox container)",
+        "current_evidence": "Blueprint architecture, FastAPI endpoint definitions in `pinkflow` repository files.",
+        "historical_evidence": "None (New structural addition).",
+        "confidence": 0.85
+      }
+    }
+  ]
+}
