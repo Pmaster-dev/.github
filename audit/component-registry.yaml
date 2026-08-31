@@ -49,6 +49,65 @@ registry:
       confidence: 1.0 (Highly Confirmed, actively referenced and fully written).
 
   - component:
+      canonical_name: NegraRosa Security Framework
+      aliases:
+        - NegraRosa
+        - negrarosa-security
+      definitions:
+        - repository: NegraRosa
+          path: README.md
+          purpose: Inclusive Security Framework providing NFT-based identity ('I AM WHO I AM' token), zero-custody credential sharing, and append-only audit logging.
+          evidence: Active Drizzle ORM layout, Express/Next API endpoints, and security pipeline workflows.
+      dependencies:
+        - DeafAUTH Identity Cortex
+        - EVM Blockchain (NFT minting)
+      consumers:
+        - FibonRoseTrust
+        - mbtq-platform
+      providers:
+        - NFT Identity Attestation & Zero-Custody Verification
+      APIs:
+        - POST /api/v1/auth/nft-verify
+        - POST /api/v1/audit/log
+      data_stores:
+        - Drizzle ORM / PostgreSQL
+      authentication: Decentralized NFT Signature / DeafAUTH
+      deployment_target: Vercel / Docker
+      current_evidence: Complete security repository in `Pmaster-dev/NegraRosa`.
+      historical_evidence: None.
+      confidence: 0.95 (High, fully specified and structured).
+
+  - component:
+      canonical_name: FibonRoseTrust AI Verification Engine
+      aliases:
+        - FibonRoseTrust
+        - fibonrose-trust
+      definitions:
+        - repository: FibonRoseTrust
+          path: README.md
+          purpose: AI-driven professional verification system authenticating deaf community service providers, interpreters, and capabilities.
+          evidence: Integrates DeafAuth, PinkSync, FibonRose, and NegraRosa into a unified AI taxonomy matcher.
+      dependencies:
+        - DeafAUTH Identity Cortex
+        - PinkSync Accessibility Engine
+        - NegraRosa Security Framework
+      consumers:
+        - Job Magician (Job-service)
+        - Business Magician (business-service)
+      providers:
+        - AI Professional Matching & Verified Provider Registry
+      APIs:
+        - POST /api/v1/verify/professional
+        - POST /api/v1/match/interpreter
+      data_stores:
+        - Drizzle ORM / PostgreSQL
+      authentication: DeafAUTH Bearer Tokens / NegraRosa NFTs
+      deployment_target: Docker / Vercel / Cloud Run
+      current_evidence: Comprehensive repository layout in `Pmaster-dev/FibonRoseTrust`.
+      historical_evidence: Reference Next.js templates in `fibonrose`.
+      confidence: 0.95 (High, actively referenced across ecosystem docs).
+
+  - component:
       canonical_name: PinkSync Accessibility Engine
       aliases:
         - pinksync-middleware
@@ -188,7 +247,7 @@ registry:
       authentication: Ethers.js Wallets & DeafAUTH credentials
       deployment_target: GKE Cluster, Decentralized Blockchain (Polygon/Ethereum)
       current_evidence: Complete staking showcase code with ethers.js in `municipal-dao-v`.
-      historical_evidence: Reference Next.js templates in `fibonrose` repository.
+      historical_evidence: Reference Next.js templates in `fibonrose`.
       confidence: 0.90 (High, well-coded contract wrappers and mock fallbacks).
 
   - component:
