@@ -17,6 +17,7 @@ Historically fragmented across multiple specifications and individual reference 
 
 ### 1. What actually exists?
 An operational, containerized, GKE-ready platform consisting of:
+* An active, production-ready live public portal (**`vr4deaf.org`**).
 * An identity provider service (**DeafAUTH**).
 * An inclusive security framework (**NegraRosa**).
 * An AI-powered universal professional verification engine (**FibonRoseTrust**).
@@ -28,10 +29,11 @@ An operational, containerized, GKE-ready platform consisting of:
 * A MicroVM code execution sandbox configuration (**PinkFlow**).
 
 ### 2. Where does it exist?
+* **Live Real-World Portal**: **`vr4deaf.org`** (the ONLY active, production-ready live domain in the real world).
 * **Runtime Implementations**: In the **`municipal-dao-v`** repository under `/services` (`deafauth-api`, `pinksync-middleware`, `360magicians-vertex-ai`, `mbtq-platform`, `mbtquniverse-dao`).
 * **Security & Trust Layer**: In **`NegraRosa`** (NFT identity & zero-custody verification) and **`FibonRoseTrust`** (AI interpreter/provider verification).
 * **Interactive Frontend Elements**: In the **`mbtq-dev`** repository (`client/src/components/SignVisualSystem/`).
-* **Validation & Sandboxing**: In **`mbtq-dev/fibonrose/`** and the **`pinkflow`** repository.
+* **GitHub Static & Endpoint Fallbacks**: GitHub Pages static endpoints (`https://Pmaster-dev.github.io/<repo>`), raw GitHub API endpoints, and static `src` code references.
 * **Specifications**: In the **`deaf-first-platform`** repository.
 
 ### 3. What is historical?
@@ -39,7 +41,7 @@ An operational, containerized, GKE-ready platform consisting of:
 * **`deafauth`**, **`pinksync-app`**, and **`fibonrose`** repositories: Separate, stand-alone reference applications that have drifted from the GCP Firestore-backed microservices.
 
 ### 4. What is currently active?
-The GKE cluster deployment configurations, Google Cloud Terraform blueprints, Firestore NoSQL structures, and Express/Next.js files inside the **`municipal-dao-v`** repository. Also, `NegraRosa`, `FibonRoseTrust`, and active React visual state panels inside `mbtq-dev`.
+**`vr4deaf.org`** in live production. The GKE cluster deployment configurations, Google Cloud Terraform blueprints, Firestore NoSQL structures, and Express/Next.js files inside the **`municipal-dao-v`** repository. Also, `NegraRosa`, `FibonRoseTrust`, and active React visual state panels inside `mbtq-dev`.
 
 ### 5. What is duplicated?
 * **Authentication**: Firestore-based registrations (`deafauth-api`) duplicate Next.js/Supabase auth methods (`deafauth` reference repository).
@@ -50,12 +52,14 @@ The GKE cluster deployment configurations, Google Cloud Terraform blueprints, Fi
 * **Database Mismatch (Critical)**: `deafauth` reference app uses Supabase/SQL. The production deployed service (`deafauth-api`) uses GCP NoSQL Firestore. Developers merging code between the two will trigger fatal database crashes.
 * **Security Tokens**: Active services issue custom **JWT** strings, whereas monolithic specifications require **Paseto** headers.
 * **Ports**: Port 3000 is double-assigned to `mbtq-platform` and local client servers. Port 8080 is double-assigned to `deafauth-api` and `vertex-ai-hub`.
+* **Inactive Custom Domains**: Domain aliases (`mbtq.dev`, `360magicians.com`, `pinksync.io`, `mbtquniverse.com`, `deafauth.mbtq.dev`) are inactive/gone, requiring fallback to GitHub static endpoints and `vr4deaf.org`.
 
 ### 7. What is infrastructure versus architecture?
 * **Architecture**: The multi-layered L0-L10 specifications defining WCAG-alternative visual sign frameworks, Fibonrose difficulty check-ins, NegraRosa NFT credentials, and one-layer synchronization.
 * **Infrastructure**: The Google Cloud Platform resources (GKE cluster node-pools, GCP managed SSL Certificates, Global IP load balancers, Cloud DNS, Redis instances, and GCS buckets) detailed in `gcp-infrastructure/terraform/main.tf` in `municipal-dao-v`.
 
 ### 8. What is canonical?
+* **Live Gateway**: `vr4deaf.org`.
 * **Configuration**: `ecosystem-architecture/mbtq-ecosystem.yaml` in `municipal-dao-v`.
 * **Services**: The Node.js and TypeScript services inside `municipal-dao-v/services/`.
 * **Security**: `NegraRosa` (inclusive NFT identity framework).
@@ -70,11 +74,12 @@ The GKE cluster deployment configurations, Google Cloud Terraform blueprints, Fi
 * **Physical Hardware Integration**: Failover flash triggers and haptic vibrator pipelines exist as modular mock abstractions but lack actual hardware-driver integrations.
 
 ### 10. What should NOT be touched?
-* The GKE/Kubernetes deployment structures and active database routes inside `municipal-dao-v` (these are working in production).
-* The **Sign Visual System** React layout and **Fibonrose Task Validator** classes inside `mbtq-dev` (these are robust and fully covered by tests).
+* The live `vr4deaf.org` portal endpoints.
+* The GKE/Kubernetes deployment structures and active database routes inside `municipal-dao-v`.
+* The **Sign Visual System** React layout and **Fibonrose Task Validator** classes inside `mbtq-dev`.
 
 ### 11. What should be consolidated?
-* All custom authentication methods across reference and specifications repos must be aligned to the GKE Firestore native profile schema and NegraRosa NFT identity standard.
+* All custom authentication methods across reference and specifications repos must be aligned to the GKE Firestore native profile schema, NegraRosa NFT identity standard, and `vr4deaf.org` portal.
 * All duplicate vector icons and SVGs (`icons/` folder, etc.) should be routed to a centralized, unified asset CDN.
 
 ### 12. What should be retired?
@@ -96,29 +101,29 @@ The GKE cluster deployment configurations, Google Cloud Terraform blueprints, Fi
 
 ## Part 2: Discovered Repository Registry
 
-This section lists and evaluates all evaluated repositories under the `Pmaster-dev` account:
-
-1. **`municipal-dao-v` [CANONICAL PRODUCTION]**
+1. **`vr4deaf.org` [LIVE PRODUCTION GATEWAY]**
+   * *Status*: Active Production. The primary operational real-world gateway.
+2. **`municipal-dao-v` [CANONICAL PRODUCTION BACKEND]**
    * *Status*: Active. Contains GCP infrastructure scripts, GKE deployment files, and current operational service code.
-2. **`mbtq-dev` [CANONICAL CLIENT & VALIDATOR]**
+3. **`mbtq-dev` [CANONICAL CLIENT & VALIDATOR]**
    * *Status*: Active. Houses the React-based Sign Visual System and the fully tested Fibonrose Task Validator module.
-3. **`NegraRosa` [CANONICAL SECURITY]**
+4. **`NegraRosa` [CANONICAL SECURITY]**
    * *Status*: Active. Inclusive security framework providing NFT-based identity and zero-custody credential sharing.
-4. **`FibonRoseTrust` [CANONICAL TRUST & VERIFICATION]**
+5. **`FibonRoseTrust` [CANONICAL TRUST & VERIFICATION]**
    * *Status*: Active. AI-powered universal professional verification engine for interpreters, professionals, and community capabilities.
-5. **`pinkflow` [CANONICAL SANDBOX]**
+6. **`pinkflow` [CANONICAL SANDBOX]**
    * *Status*: Active. Houses blueprints and sandboxing VM specifications for code verification.
-6. **`deafauth` [REFERENCE / DEPRECATED]**
+7. **`deafauth` [REFERENCE / DEPRECATED]**
    * *Status*: Historical. Reference Next.js client providers using Supabase. Needs DB model refactoring.
-7. **`pinksync-app` [REFERENCE / DEPRECATED]**
+8. **`pinksync-app` [REFERENCE / DEPRECATED]**
    * *Status*: Historical. Next.js widget and Chrome extension workspace.
-8. **`fibonrose` [REFERENCE / DEPRECATED]**
+9. **`fibonrose` [REFERENCE / DEPRECATED]**
    * *Status*: Historical. Reference staking dashboard templates.
-9. **`deaf-first-platform` [SPECIFICATIONS MONOREPO]**
-   * *Status*: Historical. Contains older OpenAPI schemas.
-10. **`accessibility-validator` [EXPERIMENTAL]**
+10. **`deaf-first-platform` [SPECIFICATIONS MONOREPO]**
+    * *Status*: Historical. Contains older OpenAPI schemas.
+11. **`accessibility-validator` [EXPERIMENTAL]**
     * *Status*: Experimental. AI accessibility CLI tool written in Python.
-11. **`Aegis` [EXPERIMENTAL]**
+12. **`Aegis` [EXPERIMENTAL]**
     * *Status*: Experimental. Next.js AI security proof-of-concept.
-12. **`business-service`, `Job-service`, `Justifed-Idea-Generator` [WORKFORCE SUITE]**
+13. **`business-service`, `Job-service`, `Justifed-Idea-Generator` [WORKFORCE SUITE]**
     * *Status*: Active. Services supporting business and vocational rehabilitation goals.
