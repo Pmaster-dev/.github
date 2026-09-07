@@ -3,23 +3,25 @@
 # Created: 2026-08-09
 # Status: COMPLETED
 
-This document defines the **GitHub Well-Architected Framework** for the MBTQ / 360Magicians ecosystem. It catalogs the roles of **QA Agents & Developer Magicians**, **GitHub Pages & Cloudflare Edge Status**, **Showcase & Demo Lifecycles**, and provides a detailed **Ecosystem Dependency & Cloud Cost Analysis**.
+This document defines the **GitHub Well-Architected Framework** for the MBTQ / 360Magicians ecosystem. It catalogs the roles of **QA Agents & Developer Magicians**, **AI Capabilities Matrix**, **Post-Script Orchestration**, **GitHub Pages & Cloudflare Edge Status**, **Showcase & Demo Lifecycles**, and provides a detailed **Ecosystem Dependency & Cloud Cost Analysis**.
 
 ---
 
 ## 1. QA Agents & Autonomous Developer Magicians
 
-The ecosystem employs a team of specialized AI agents and QA validators:
+The ecosystem employs a team of specialized AI agents, QA validators, and post-script runners:
 
-### **Agent Roster & Responsibilities**
+### **Agent Roster & Capabilities Matrix**
 
-| Agent / Bot Name | Primary Role | Trigger & Tools | Quality Gate / Output |
+| Agent / Model Name | Primary Role & Capabilities | Trigger & Tools | Target Ecosystem Scope |
 |---|---|---|---|
-| **PMaster Auto-Dev Router** | Orchestrator & Request Router | `workflow_dispatch` / Issue events | Delegates task requests to specialized sub-agents based on domain/complexity. |
-| **Quinn (Developer Magician)** | Task Complexity Assessor | Issue comments / Fibonrose | Calculates Fibonacci complexity (0-9) and generates evidence checklists. |
-| **CodeValidationAgent** | MicroVM Sandbox Verifier | `pinkflow-sandbox` / FastAPI | Spawns Firecracker MicroVMs to test partner code safely before merging. |
-| **Accessibility Auditor Agent** | Deaf-First UX Validator | `accessibility-validator` | Evaluates interfaces against "Sign Leads, Text Follows" rules and WCAG 2.1 AAA. |
-| **Security Sentinel Agent** | Path Guard & SSRF Reviewer | `server/src/utils/ssrfAgent.ts` | Enforces IP parsing (`ipaddr.js`), path guards (`path.resolve`), and secret scrubbing. |
+| **PMaster Auto-Dev Router** | Orchestrator & Request Delegation | `workflow_dispatch` / Issue events | `Pmaster-dev/.github` |
+| **Vertex AI Gemini-1.5-pro** | Multi-Domain Generative AI (Creative, Design, Content, Accessibility) | `@google-cloud/vertexai` SDK | `services/360magicians-vertex-ai` in `municipal-dao-v` |
+| **V0 & Gemini CLI Bridge** | Deaf-First UI Layout & Code Synthesis | `@ai-sdk/google` / Studio Proxy | `services/mbtq-platform` in `municipal-dao-v` |
+| **Jules Enterprise Agent** | Technical Architecture & Specs Audit | Agent Directive Execution | `mbtq-dev`, `Pmaster-dev/.github` |
+| **Quinn (Developer Magician)** | Task Complexity & Fibonacci Verification | Issue comments / Fibonrose | `mbtq-dev/fibonrose` |
+| **CodeValidationAgent** | MicroVM Sandbox Verifier | `pinkflow-sandbox` / FastAPI | `pinkflow/container` |
+| **Post-Script Orchestrator** | Anti-Vendor Lock (`strip-magic.sh`) & Deployment Hooks | `Mbtq-sovereign.yml` / Bash | `deaf-first-platform`, `municipal-dao-v` |
 
 ---
 

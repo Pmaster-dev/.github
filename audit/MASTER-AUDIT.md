@@ -22,12 +22,13 @@ An operational, containerized, GKE-ready platform consisting of:
 * An inclusive security framework (**NegraRosa**).
 * An AI-powered universal professional verification engine (**FibonRoseTrust**).
 * An accessibility middleware service (**PinkSync**).
-* A specialized multi-domain Vertex AI agent hub (**360Magicians**).
+* A specialized multi-domain Vertex AI agent hub (**360Magicians** using Gemini-1.5-pro models).
 * A client interface engine featuring the **Sign Visual System** state machine.
 * A Web3-capable governance, staking, and project auditing dashboard (**MBTQ Universe**).
 * A task-complexity and checkpoint validator (**Fibonrose**).
 * A MicroVM code execution sandbox configuration (**PinkFlow**).
-* Cross-platform HTML/CSS verification, MIME-type pairing, and magic byte detection utilities.
+* Post-script execution hooks (`strip-magic.sh` anti-vendor lock sanitizer).
+* Cross-platform HTML/CSS verification, MIME-type pairing, and media detection utilities.
 
 ### 2. Where does it exist?
 * **Live Real-World Portal**: **`vr4deaf.org`** (the ONLY active, production-ready live domain in the real world).
