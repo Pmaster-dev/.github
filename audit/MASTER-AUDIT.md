@@ -27,6 +27,7 @@ An operational, containerized, GKE-ready platform consisting of:
 * A Web3-capable governance, staking, and project auditing dashboard (**MBTQ Universe**).
 * A task-complexity and checkpoint validator (**Fibonrose**).
 * A MicroVM code execution sandbox configuration (**PinkFlow**).
+* Cross-platform HTML/CSS verification, MIME-type pairing, and magic byte detection utilities.
 
 ### 2. Where does it exist?
 * **Live Real-World Portal**: **`vr4deaf.org`** (the ONLY active, production-ready live domain in the real world).
@@ -34,7 +35,7 @@ An operational, containerized, GKE-ready platform consisting of:
 * **Security & Trust Layer**: In **`NegraRosa`** (NFT identity & zero-custody verification) and **`FibonRoseTrust`** (AI interpreter/provider verification).
 * **Interactive Frontend Elements**: In the **`mbtq-dev`** repository (`client/src/components/SignVisualSystem/`).
 * **GitHub Static & Endpoint Fallbacks**: GitHub Pages static endpoints (`https://Pmaster-dev.github.io/<repo>`), raw GitHub API endpoints, and static `src` code references.
-* **Specifications**: In the **`deaf-first-platform`** repository.
+* **Specifications**: In the **`deaf-first-platform`** repository and **`Pmaster-dev/docs`**.
 
 ### 3. What is historical?
 * The **`deaf-first-platform`** repository (acts as an older, monolithic specification registry containing OpenAPI specs, but not the active production code).
@@ -55,7 +56,7 @@ An operational, containerized, GKE-ready platform consisting of:
 * **Inactive Custom Domains**: Domain aliases (`mbtq.dev`, `360magicians.com`, `pinksync.io`, `mbtquniverse.com`, `deafauth.mbtq.dev`) are inactive/gone, requiring fallback to GitHub static endpoints and `vr4deaf.org`.
 
 ### 7. What is infrastructure versus architecture?
-* **Architecture**: The multi-layered L0-L10 specifications defining WCAG-alternative visual sign frameworks, Fibonrose difficulty check-ins, NegraRosa NFT credentials, and one-layer synchronization.
+* **Architecture**: The multi-layered L0-L10 specifications defining WCAG-alternative visual sign frameworks, Fibonrose difficulty check-ins, NegraRosa NFT credentials, MIME-type pairings, and one-layer synchronization.
 * **Infrastructure**: The Google Cloud Platform resources (GKE cluster node-pools, GCP managed SSL Certificates, Global IP load balancers, Cloud DNS, Redis instances, and GCS buckets) detailed in `gcp-infrastructure/terraform/main.tf` in `municipal-dao-v`.
 
 ### 8. What is canonical?
